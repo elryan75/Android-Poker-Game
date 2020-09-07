@@ -7,7 +7,7 @@
 The primary objective of the application is to help new players improve at the game of poker. In our singleplayer game, you will face three other bots of varying difficulty. Using probability and statistics, bots are able to evaluate the strenght of their hands and also bluff other players. We created a unique probability table to deliver the most important statistics so that the user can make the most informed decisions at any time while playing.
 
 
-## Project Screen Shot(s)
+## Project Screenshots
 
 ![Alt text](/Images/first.png?raw=true "") 
 
