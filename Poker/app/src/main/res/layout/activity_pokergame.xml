@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pokergame">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/todo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        tools:layout_editor_absoluteX="-33dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/foldBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/fold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/checkBttn"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <Button
+        android:id="@+id/checkBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check"
+        android:fontFamily="@font/adamina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <Button
+        android:id="@+id/raiseBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/raise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toEndOf="@+id/checkBttn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <ImageView
+        android:id="@+id/deck"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/deck" />
+
+    <ImageView
+        android:id="@+id/handCard1"
+        android:layout_width="58dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBttn"
+        app:layout_constraintEnd_toStartOf="@+id/checkBttn"
+        app:srcCompat="@android:drawable/divider_horizontal_textfield" />
+
+    <ImageView
+        android:id="@+id/handCard2"
+        android:layout_width="58dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBttn"
+        app:layout_constraintStart_toStartOf="@+id/checkBttn"
+        app:srcCompat="@android:drawable/divider_horizontal_textfield" />
+
+    <ImageView
+        android:id="@+id/hand1"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="55dp"
+        android:rotation="340"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hand" />
+
+    <ImageView
+        android:id="@+id/hand2"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toEndOf="@+id/hand1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hand" />
+
+    <ImageView
+        android:id="@+id/hand3"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="50dp"
+        android:rotation="20"
+        app:layout_constraintStart_toEndOf="@+id/hand2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hand" />
+
+    <TextView
+        android:id="@+id/chipsBot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/chipsPlayer"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/hand1"
+        app:layout_constraintTop_toBottomOf="@+id/hand1" />
+
+    <TextView
+        android:id="@+id/betBot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/betAmount"
+        android:textColor="@color/green"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/chipsBot1"
+        app:layout_constraintStart_toStartOf="@+id/chipsBot1"
+        app:layout_constraintTop_toBottomOf="@+id/chipsBot1" />
+
+    <TextView
+        android:id="@+id/betPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/adamina"
+        android:text="@string/betAmount"
+        android:textColor="@color/green"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBttn"
+        app:layout_constraintStart_toEndOf="@+id/handCard2"
+        app:layout_constraintTop_toBottomOf="@+id/tableCard3" />
+
+    <TextView
+        android:id="@+id/betBot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/betAmount"
+        android:textColor="@color/green"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/chipsBot2"
+        app:layout_constraintStart_toStartOf="@+id/chipsBot2"
+        app:layout_constraintTop_toBottomOf="@+id/chipsBot2" />
+
+    <TextView
+        android:id="@+id/betBot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/betAmount"
+        android:textColor="@color/green"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/chipsBot3"
+        app:layout_constraintStart_toStartOf="@+id/chipsBot3"
+        app:layout_constraintTop_toBottomOf="@+id/chipsBot3" />
+
+    <TextView
+        android:id="@+id/thePot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="@font/adamina"
+        android:text="The Pot"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toEndOf="@+id/tableCard5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <TextView
+        android:id="@+id/pot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="0$"
+        android:textColor="@color/green"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/thePot"
+        app:layout_constraintStart_toStartOf="@+id/thePot"
+        app:layout_constraintTop_toBottomOf="@+id/thePot" />
+
+    <TextView
+        android:id="@+id/chipsPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/chipsPlayer"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/foldBttn"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/chipsBot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/chipsPlayer"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/hand2"
+        app:layout_constraintStart_toStartOf="@+id/hand2"
+        app:layout_constraintTop_toBottomOf="@+id/hand2" />
+
+    <TextView
+        android:id="@+id/chipsBot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/chipsPlayer"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/hand3"
+        app:layout_constraintTop_toBottomOf="@+id/hand3" />
+
+    <Button
+        android:id="@+id/confirmBttn"
+        android:layout_width="80dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/adamina"
+        android:text="Confirm"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/raiseBttn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.978" />
+
+    <EditText
+        android:id="@+id/moneyRaised"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/adamina"
+        android:hint="Money raised"
+        android:inputType="number"
+        android:textColor="#C1C1C1"
+        android:textColorHint="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/confirmBttn"
+        app:layout_constraintStart_toStartOf="@+id/confirmBttn" />
+
+    <ImageView
+        android:id="@+id/tableCard1"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/deck"
+        app:layout_constraintStart_toEndOf="@+id/deck"
+        app:layout_constraintTop_toTopOf="@+id/deck"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/tableCard2"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="@+id/deck"
+        app:layout_constraintStart_toEndOf="@+id/tableCard1"
+        app:layout_constraintTop_toTopOf="@+id/deck"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/tableCard3"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="@+id/deck"
+        app:layout_constraintStart_toEndOf="@+id/tableCard2"
+        app:layout_constraintTop_toTopOf="@+id/deck"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/tableCard4"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="@+id/deck"
+        app:layout_constraintStart_toEndOf="@+id/tableCard3"
+        app:layout_constraintTop_toTopOf="@+id/deck"
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/tableCard5"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="@+id/deck"
+        app:layout_constraintStart_toEndOf="@+id/tableCard4"
+        app:layout_constraintTop_toTopOf="@+id/deck"
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/pos0"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/handCard1"
+        app:layout_constraintEnd_toStartOf="@+id/handCard1"
+        app:layout_constraintTop_toTopOf="@+id/handCard1"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/pos2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chipsBot2"
+        app:layout_constraintStart_toEndOf="@+id/chipsBot2"
+        app:layout_constraintTop_toBottomOf="@+id/hand2"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/pos1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chipsBot1"
+        app:layout_constraintStart_toEndOf="@+id/chipsBot1"
+        app:layout_constraintTop_toTopOf="@+id/chipsBot1"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/pos3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chipsBot3"
+        app:layout_constraintEnd_toStartOf="@+id/chipsBot3"
+        app:layout_constraintTop_toTopOf="@+id/chipsBot3"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <TextView
+        android:id="@+id/xBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/adamina"
+        android:text="X"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bot1HandCard2"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintStart_toEndOf="@+id/bot1HandCard1"
+        app:layout_constraintTop_toTopOf="@+id/bot1HandCard1"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/bot1HandCard1"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/pos1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/bot2HandCard1"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        app:layout_constraintBottom_toTopOf="@+id/pos2"
+        app:layout_constraintStart_toEndOf="@+id/hand1"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/bot2HandCard2"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintStart_toEndOf="@+id/bot2HandCard1"
+        app:layout_constraintTop_toTopOf="@+id/bot2HandCard1"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/bot3HandCard1"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        app:layout_constraintBottom_toTopOf="@+id/pos3"
+        app:layout_constraintStart_toEndOf="@+id/hand2"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/bot3HandCard2"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintStart_toEndOf="@+id/bot3HandCard1"
+        app:layout_constraintTop_toTopOf="@+id/bot3HandCard1"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <TextView
+        android:id="@+id/turnBot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bot1's Turn"
+        android:fontFamily="@font/adamina"
+        android:textColor="#FFC107"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/hand1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722" />
+
+    <TextView
+        android:id="@+id/turnBot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="Bot2's Turn"
+        android:textColor="#FFC107"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bot2HandCard2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/turnBot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bot3's Turn"
+        android:fontFamily="@font/adamina"
+        android:textColor="#FFC107"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bot3HandCard2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607" />
+
+    <TextView
+        android:id="@+id/turnPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="Your Turn!"
+        android:textColor="#FFC107"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <TextView
+        android:id="@+id/probabilitiesTest"
+        android:layout_width="115dp"
+        android:layout_height="264dp"
+        android:layout_marginBottom="60dp"
+        android:text="Probabilities"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/moneyRaised"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toEndOf="@+id/pot"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

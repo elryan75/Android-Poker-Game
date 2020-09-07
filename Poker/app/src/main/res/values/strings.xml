@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Poker!Prototype</string>
+    <string name="poker">Poker!</string>
+    <string name="todo">TODO</string>
+    <string name="play">Play</string>
+    <string name="fold">Fold</string>
+    <string name="check">Check/Call</string>
+    <string name="raise">Raise</string>
+    <string-array name="numberPlayers">
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+    </string-array>
+    <string name="chipsPlayer">1000$</string>
+    <string name="betAmount">0$</string>
+    <string name="rFlush">Royal Flush: ND</string>
+    <string name="sFlush">Straight Flush: ND</string>
+    <string name="fourKind">Four of a kind: ND</string>
+    <string name="fHouse">Full House: ND</string>
+    <string name="nFlush">Flush: ND</string>
+    <string name="straight">Straight: ND</string>
+    <string name="threeKind">Three of a kind: ND</string>
+    <string name="twoPairs">Two Pairs: ND</string>
+    <string name="onePairs">Pair: ND</string>
+    <string name="nothing">(Highest Card): ND</string>
+</resources>
